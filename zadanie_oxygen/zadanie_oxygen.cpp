@@ -86,7 +86,7 @@ std::vector<int> searchIslands(int * arr, int sizeOfArray) //wyszukiwanie najwie
 std::vector<int> searchZeroToOne(int * arr, int sizeOfArray) //wyszukiwanie przejsc zera w jedynki
 {
 	std::vector<int> zeroToOne;
-	printf("\nmiejsca przejsc jedynek w zera: \n");
+	printf("\nmiejsca przejsc zera w jedynki: \n");
 	for (int i = 0; i < sizeOfArray; i++)
 	{
 		if (arr[i] == 1) { continue; }
