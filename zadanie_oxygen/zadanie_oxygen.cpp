@@ -10,7 +10,7 @@ int main()
 	srand(time(NULL));
 	int sizeOfArr,i,oneMax;
 	std::vector<int> numbOfIslands;//wektor jest praktyczniejszy, w przypadku gdy jest wiecej niz jedna najwieksza "wyspa"
-	std::vector<int> oneToZero; //na wektrorze zapisane beda miejsca ostatnich jedynek na wyspie (chociaz tylko do wyswietlania tych indeksow nie jest potrzebny :) )
+	std::vector<int> zeroToOne; //na wektrorze zapisane beda miejsca ostatnich zer na wyspie (chociaz tylko do wyswietlania tych indeksow nie jest potrzebny :) )
 
 	//tworzenie dynamicznej tablicy 
 	printf("podaj rozmiar tablicy ");
@@ -39,7 +39,7 @@ int main()
 	for (std::vector<int>::iterator it = numbOfIslands.begin(); it != numbOfIslands.end(); ++it)
 		printf("od %d do %d\n", *it-oneMax+1, *it);
 
-	oneToZero = searchZeroToOne(arr, sizeOfArr);
+	zeroToOne = searchZeroToOne(arr, sizeOfArr);
 
 	printf("\n\n indeksowanie tablic od 0\n");
 	system("PAUSE");
