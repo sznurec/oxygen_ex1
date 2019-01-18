@@ -3,7 +3,7 @@
 #include<time.h>
 #include<vector>
 std::vector<int> searchIslands(int *arr, int sizeOfArray);
-std::vector<int> searchOneToZero(int *arr, int sizeOfArray);
+std::vector<int> searchZeroToOne(int *arr, int sizeOfArray);
 
 int main()
 {	
@@ -39,7 +39,7 @@ int main()
 	for (std::vector<int>::iterator it = numbOfIslands.begin(); it != numbOfIslands.end(); ++it)
 		printf("od %d do %d\n", *it-oneMax+1, *it);
 
-	oneToZero = searchOneToZero(arr, sizeOfArr);
+	oneToZero = searchZeroToOne(arr, sizeOfArr);
 
 	printf("\n\n indeksowanie tablic od 0\n");
 	system("PAUSE");
@@ -83,20 +83,20 @@ std::vector<int> searchIslands(int * arr, int sizeOfArray) //wyszukiwanie najwie
 	return numbOfIslands;
 }
 
-std::vector<int> searchOneToZero(int * arr, int sizeOfArray) //wyszukiwanie przejsc jedynek w zera
+std::vector<int> searchZeroToOne(int * arr, int sizeOfArray) //wyszukiwanie przejsc zera w jedynki
 {
-	std::vector<int> oneToZero;
+	std::vector<int> zeroToOne;
 	printf("\nmiejsca przejsc jedynek w zera: \n");
 	for (int i = 0; i < sizeOfArray; i++)
 	{
-		if (arr[i] == 0) { continue; }
-		while (arr[i] == 1)
+		if (arr[i] == 1) { continue; }
+		while (arr[i] == 0)
 		{
-			if (i >= sizeOfArray - 1) return oneToZero;
+			if (i >= sizeOfArray - 1) return zeroToOne;
 			i++;
 		}
-		oneToZero.push_back(i - 1);
+		zeroToOne.push_back(i - 1);
 		printf("%d ", i - 1);
 	}
-	return oneToZero;
+	return zeroToOne;
 }
